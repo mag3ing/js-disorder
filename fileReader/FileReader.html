@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>h5 FileReader</title>
+</head>
+<body>
+<div>
+    <h4>h5 file reader</h4>
+    <input type="file" id="file_input">
+    <div id="imgshow"><img src="" alt="图片" id="img"></div>
+</div>
+<script>
+    var input = document.getElementById('file_input');
+    var imgShow = document.getElementById('imgshow');
+    var img = document.getElementById('img');
+    if(typeof FileReader === 'undefined'){
+        imgshow.innerHtml = '~~~~(>_<)~~~~ ';
+        input.setAttribute('disabled', 'disabled');
+    }else{
+        input.addEventListener('change', readFile,false);
+    }
+    function readFile() {
+        var file = this.files[0];
+        console.log(file);
+        if(!/image\/\w+/.test(file.type)){
+            alert('格式错误');
+            return false;
+        }
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function (e) {
+            img.src = this.result;
+        }
+    }
+</script>
+</body>
+</html>

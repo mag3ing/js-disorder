@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="output"></div>
+
+<button onclick="updateSync ()">Run Sync</button>
+
+<button onclick="updateAsync ()">Run Async</button>
+
+<script>
+
+    function updateSync() {
+        for (var i = 0; i < 1000000; i++) {
+            document.getElementById('output').innerHTML = i;
+        }
+    }
+
+    function updateAsync() {
+        var i = 0;
+
+        function updateLater() {
+            document.getElementById('output').innerHTML = (i++);
+            if (i < 1000) {
+                setTimeout(updateLater, 0);
+            }
+        }
+
+        updateLater();
+    }
+</script>
+</body>
+</html>

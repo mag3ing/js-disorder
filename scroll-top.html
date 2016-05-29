@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="./lib/jquery-1.12.4.min.js"></script>
     <style class="text/css">
         .container{
             background-color: antiquewhite;
@@ -18,7 +19,7 @@
         }
     </style>
 </head>
-<body onload="load()">
+<body>
     <div class="container">
         <div class="scrolltop">
             lala
@@ -26,11 +27,12 @@
     </div>
 </body>
 <script>
-    function load(){
-        var scrollEle = document.getElementsByClassName('scrolltop')[0];
-        scrollEle.onmouseover(function(){
-            alert('hha');
+    $(function () {
+        $(".scrolltop").mouseenter(function () {
+            $(this).css("background-color","blue");
+        }).click(function () {
+            $(this).css("display","none");
         });
-    }
+    });
 </script>
 </html>

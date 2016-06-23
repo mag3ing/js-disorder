@@ -1,0 +1,21 @@
+.demo-wrap{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #f10582;
+    background-color: #eee;
+}
+.demo-wrap > div{
+    margin: 20px;
+}
+.demo-1{
+    border: 1px solid #eee;
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+.demo-2{
+    border: 1px solid #FFB12F;
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+}

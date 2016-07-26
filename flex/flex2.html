@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .flexbox-container{
+            border: 1px solid hsla(120, 30%, 50%, 0.8);
+            margin: 50px;
+            background-color: hsla(10, 80%, 10%, 0.2);
+            height: 300px;
+            width: 565px;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: row wrap;
+            align-items: flex-start;
+        }
+        .flexbox-container > div {
+            width: 100px;
+            min-height: 100px;
+            border: 1px solid hsla(120, 30%, 50%, 0.8);
+            margin: 5px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 100px;
+            color: #fff;
+            font-weight: bold;
+        }
+        .flexbox-container > div:nth-child(1){
+            background-color: hsla(120, 30%, 50%, 0.8);
+            align-self: flex-start;
+        }
+        .flexbox-container > div:nth-child(2){
+            background-color: hsla(120, 30%, 50%, 0.8);
+            align-self: flex-end;
+        }
+        .flexbox-container > div:nth-child(3){
+            background-color: hsla(120, 30%, 50%, 0.8);
+            align-self: center;
+        }
+        .flexbox-container > div:nth-child(4){
+            background-color: hsla(120, 30%, 50%, 0.8);
+            align-self: baseline;
+        }
+        .flexbox-container > div:nth-child(5){
+            background-color: hsla(120, 30%, 50%, 0.8);
+            align-self: stretch;
+        }
+    </style>
+</head>
+<body>
+<div class="flexbox-container">
+    <div>flex-start</div>
+    <div>flex-end</div>
+    <div>center</div>
+    <div>baseline</div>
+    <div>stretch</div>
+</div>
+</body>
+</html>
